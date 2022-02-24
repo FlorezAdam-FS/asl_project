@@ -1,0 +1,20 @@
+{% extends 'layouts/_default.twig'%}
+
+{% block main_content %}
+    <ul style="list-style: none; padding: 0;">
+    {% for choice in choices %}
+      <li>
+      1. {{choice.choiceOne}} <br/>
+      2. {{choice.choiceTwo}} <br/>
+      3. {{choice.choiceThree}} <br/>
+      4. {{choice.choiceFour}} - 
+        <a href="/choices/{{choice.id}}/edit">Edit</a> | 
+        <a href="/choices/{{choice.id}}/delete ">Delete</a>
+      </li>
+      <hr style="width: 300px;margin-left:0">
+    {% endfor %}
+    </ul>    
+    <p>
+      <a href="/choices/new"> Create new set of choices</a>
+    </p>
+{% endblock %}
